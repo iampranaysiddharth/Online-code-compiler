@@ -1,0 +1,8 @@
+import subprocess
+
+code = input("Enter Python code: ")
+with open("script.py", "w") as file:
+    file.write(code)
+
+result = subprocess.run(["python", "script.py"], capture_output=True, text=True)
+print(result.stdout)
